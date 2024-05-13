@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Shop</title>
+    <style>
+        /* Navbar Style */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f9fa; /* Change background color if needed */
+            padding: 10px 20px;
+            color: #228B22; /* Text color */
+        }
+        .header {
+            display: flex;
+            align-items: center;
+        }
+        .header h2 {
+            font-size: 125px;
+            margin-left: 10px;
+        }
+
+        .header i {
+            font-size: 125px;
+        }
+        .navbar-buttons {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-buttons a {
+            font-size: 75px;
+            color: #228B22; /* Text color */
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .navbar-buttons a:hover {
+            text-decoration: underline;
+        }
+
+        /* Meyve Görseli ve Buton Stili */
+        .fruit-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Aralık */
+            justify-content: center;
+        }
+        .fruit {
+            text-align: center;
+            margin: 150px; 
+        }
+        .fruit img {
+            width: 750px;
+            height: 750px; 
+            display: block;
+            margin: 0 auto 10px; 
+        }
+        .fruit button {
+           
+            height: 150px;
+            width: 450px;
+            border-radius: 75px;
+            background-color: #70e000; 
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin-top: 40px; 
+            cursor: pointer;
+        }
+        .fruit button{
+            font-size: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="header">
+            <i class="fas fa-recycle fa-2x" style="color: #228b22;"></i>
+            <h2>No Waste</h2>
+        </div>
+        <div class="navbar-buttons">
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">Profile</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+
+    
+    <div class="fruit-container" id="fruit-row1">
+    
+        <div class="fruit">
+       <a href="apple.html">     <img src="images/apple.jpg" alt="Apple"> </a>
+            <button onclick="window.location.href='apple.html'">Apple</button>
+        </div>
+        <div class="fruit">
+          <a href="banana.html">  <img src="images/banana.jpg" alt="Banana"> </a>
+            <button onclick="window.location.href='banana.html'">Banana</button>
+        </div>
+        <div class="fruit">
+       <a href="grape.html">     <img src="images/grape.jpg" alt="Grape"></a>
+            <button onclick="window.location.href='grape.html'">Grape</button>
+        </div>
+
+    </div>
+    
+
+    <div class="fruit-container" id="fruit-row2">
+        <div class="fruit">
+           <a href="olive"><img src="images/olive.jpg" alt="Olive"></a>
+            <button onclick="window.location.href='olive.html'">Olive</button>
+        </div>
+        <div class="fruit">
+          <a href="orange.html">   <img src="images/orange.jpg" alt="Orange"></a>
+            <button onclick="window.location.href='orange.html'">Orange</button>
+        </div>
+        <div class="fruit">
+        <a href="potato.html">    <img src="images/potato.jpg" alt="Potato"></a> 
+            <button onclick="window.location.href='potato.html'">Potato</button>
+        </div>
+    </div>
+
+
+    
+
+</body>
+</html>

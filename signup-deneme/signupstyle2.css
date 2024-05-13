@@ -1,0 +1,55 @@
+body{
+
+  text-align: center;
+  background-color: lightgrey;
+}
+#box-icon {
+  font-size: 72px;
+}
+.header h2 {
+  display: inline-block;
+  color: #228B22;
+font-size: 44px;
+}
+h1{
+  color: #228B22;
+  text-align: center;
+ 
+}
+.radio-label {
+  color: #228B22;
+  font-size: 24px;
+}
+
+.form-signup .required-text {
+  background-color: #70e000;
+  border-radius: 10px;
+  margin: 10px;
+  width: 300px;
+height: 30px;
+border: none;
+}
+#signup-button{
+  margin: 10px;
+  background-color: #228B22;
+  width: 300px;
+height: 30px;
+border-radius: 10px; 
+}
+.form-signup{
+
+  text-align: center;
+
+}
+
+.form-signup input{
+  margin-top: 15px;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.form-signup button{
+  margin-top: 15px;
+  border-radius: 10px;
+  padding: 3px;
+}
