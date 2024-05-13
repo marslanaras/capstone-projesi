@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Document</title>
+
+  <style>
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f9fa; /* Change background color if needed */
+      padding: 10px 20px;
+      color: #228B22; /* Text color */
+  }
+  .header {
+      display: flex;
+      align-items: center;
+  }
+  .header h2 {
+      font-size: 125px;
+      margin-left: 10px;
+  }
+
+  .header i {
+      font-size: 125px;
+  }
+  .navbar-buttons {
+      display: flex;
+      align-items: center;
+  }
+  .navbar-buttons a {
+      font-size: 75px;
+      color: #228B22; /* Text color */
+      text-decoration: none;
+      margin-left: 20px;
+  }
+  .navbar-buttons a:hover {
+      text-decoration: underline;
+  }
+  .container {
+    margin-top: 50px;
+    display: flex;
+  }
+  .calculations{
+    font-size: 75px;
+    margin-left: 100px;
+  }
+
+  .olive-img {
+    
+    height: 1000px;
+    width: 1000px;
+  }
+
+  .olive-content {
+    margin-top: 50px;
+    margin-left: 75px;
+    height: 1000px;
+    width: 1000px;
+  }
+  #potato-description {
+    margin-top: 20px;
+    font-size: 70px;
+  }
+.scores {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  font-size: 75px;
+}
+
+.scores-category {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+#conversionMethods {
+  font-size: 50px;
+  height: 100px;
+  width: 750px;
+}
+input {
+  font-size: 50px;
+  width: 750px;
+  height: 100px;
+}
+
+#submit-button {
+
+  height: 100px;
+  width: 750px;
+  border-radius: 50px;
+  font-size: 50px;
+}
+  </style>
+
+
+
+</head>
+<body>
+  <nav class="navbar">
+    <div class="header">
+        <i class="fas fa-recycle fa-2x" style="color: #228b22;"></i>
+        <h2>No Waste</h2>
+    </div>
+    <div class="navbar-buttons">
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Profile</a>
+        <a href="#">Contact</a>
+    </div>
+    
+</nav>
+<div class="container">
+<div class="olive-content">
+<img src="images/olive.jpg" class="olive-img">
+
+<p id="potato-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore magni, ipsa veniam labore aut quam quasi sed itaque explicabo vel, laudantium in quaerat nisi, commodi optio porro quas! Natus, provident.</p>
+</div>
+
+<div class="calculations">
+<p>Enter your products kilogram</p>
+<input type="number" id="productKilogram">
+
+<p>Conversion methods</p>
+<select id="conversionMethods">
+  <option value="">-- Select Conversion Method --</option>
+  <option value="animalFeed">Animal Feed</option>
+  <option value="fuel">Fuel</option>
+  <option value="veganLeather">Vegan Leather</option>
+  <option value="cosmeticsPharmaceutical">Cosmetics/Pharmaceutical</option>
+  <option value="constructionMaterials">Construction Materials</option>
+</select>
+
+<p>Price</p>
+<label id="priceLabel"></label>
+
+<div><button type="submit" id="submit-button" onclick="calculateScores()">Calculate</button> </div>
+
+</div>
+<div class="scores">
+  <p class="scores-category">Economic Score</p>
+  <label id="economicScore"></label>
+  <p class="scores-category">Environmental Score</p>
+  <label id="environmentalScore"></label>
+  <p class="scores-category">Social Score</p>
+  <label id="socialScore"></label>
+  
+</div>
+
+</div>
+
+<script>
+  function calculateScores() {
+    const marketValues = {
+      animalFeed: {economic: 2, environmental: 4, social: 4},
+      fuel: {economic: 1, environmental: 4, social: 4},
+      veganLeather: {economic: 4, environmental: 4, social: 5},
+      cosmeticsPharmaceutical: {economic: 4, environmental: 3, social: 3},
+      constructionMaterials: {economic: 4, environmental: 4, social: 3},
+    };
+
+    const productKilogram = parseFloat(document.getElementById("productKilogram").value);
+    const selectedMethod = document.getElementById("conversionMethods").value;
+
+    var  animalFeedKg= 150;
+    var  fuelKg=75;
+    var veganLeatherKg= 300;
+    var cosmeticsPharmaceuticalKg= 500;
+    var constructionMaterialsKg=400;
+
+    if (!isNaN(productKilogram) && selectedMethod !== "") {
+      const {economic, environmental, social} = marketValues[selectedMethod];
+      const totalPrice = productKilogram * (selectedMethod === "animalFeed" ? animalFeedKg :
+                        selectedMethod === "fuel" ? fuelKg :
+                        selectedMethod === "veganLeather" ? veganLeatherKg :
+                        selectedMethod === "constructionMaterials" ? constructionMaterialsKg :
+                        selectedMethod === "cosmeticsPharmaceutical" ? cosmeticsPharmaceuticalKg : 0);
+
+      document.getElementById("priceLabel").innerText = `$ ${totalPrice} `;
+
+      document.getElementById("economicScore").innerText = `Score ${economic}`;
+      document.getElementById("environmentalScore").innerText = `Score ${environmental}`;
+      document.getElementById("socialScore").innerText = `Score ${social}`;
+    } else {
+      alert("Please enter a valid product kilogram and select a conversion method.");
+    }
+  }
+</script>
+
+</body>
+</html>
